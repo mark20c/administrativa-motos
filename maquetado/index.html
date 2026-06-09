@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotoPlanet S.A.C. | Yamaha · Bajaj · Suzuki</title>
+    <meta name="description" content="Catálogo de motos Yamaha, Bajaj y Suzuki en Puerto Maldonado">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <nav>
+            <div class="logo">
+                <i class="fas fa-motorcycle"></i>
+                MotoPlanet S.A.C.
+            </div>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>Tu Pasión Sobre Dos Ruedas</h1>
+                <p>Yamaha · Bajaj · Suzuki · Financiamiento inmediato · Garantía 1 año</p>
+                <a href="#catalogo" class="btn-cta">Ver Catálogo</a>
+            </div>
+        </section>
+
+        <section id="catalogo" class="container">
+            <h2 class="section-title">Nuestro Catálogo de Motos</h2>
+            <p class="catalogo-descripcion">Haz clic en cualquier moto para ver su ficha técnica completa</p>
+
+            <div class="catalogo-grid">
+                <!-- Yamaha YBR 125 -->
+                <a href="#modal-yamaha-ybr125" class="moto-card">
+                    <div class="moto-imagen">
+                        <img src="data:image/jpeg;base64,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" alt="Yamaha YBR 125">
+                    </div>
+                    <div class="moto-info">
+                        <h3>Yamaha YBR 125</h3>
+                        <span class="marca-badge">YAMAHA</span>
+                        <p>Ideal para la ciudad, económica y confiable</p>
+                        <div class="precio">Desde S/ 8,990</div>
+                    </div>
+                </a>
+
+                <!-- Yamaha FZ 150 -->
+                <a href="#modal-yamaha-fz150" class="moto-card">
+                    <div class="moto-imagen">
+                        <img src="https://yamahayamamotos.com.co/wp-content/uploads/fz15v3_gris_2025-jpg.webp" alt="Yamaha FZ 150">
+                    </div>
+                    <div class="moto-info">
+                        <h3>Yamaha FZ 150</h3>
+                        <span class="marca-badge">YAMAHA</span>
+                        <p>Diseño agresivo y rendimiento deportivo</p>
+                        <div class="precio">Desde S/ 12,490</div>
+                    </div>
+                </a>
+
+                <!-- Yamaha Crypton 110 -->
+                <a href="#modal-yamaha-crypton110" class="moto-card">
+                    <div class="moto-imagen">
+                        <img src="https://lucero.com.pe/wp-content/uploads/2022/08/4-23.png" alt="Yamaha Crypton 110">
+                    </div>
+                    <div class="moto-info">
+                        <h3>Yamaha Crypton 110</h3>
+                        <span class="marca-badge">YAMAHA</span>
+                        <p>Económica, ágil y perfecta para la ciudad</p>
+                        <div class="precio">Desde S/ 6,990</div>
+                    </div>
+                </a>
+
+                <!-- Bajaj Discover 125 ST -->
+                <a href="#modal-bajaj-discover125st" class="moto-card">
+                    <div class="moto-imagen">
+                        <img src="https://somosmoto.pe/images/models/gallery/bajaj-discover-125st-2024-gallery-c9e2ae.jpg" alt="Bajaj Discover 125 ST">
+                    </div>
+                    <div class="moto-info">
+                        <h3>BAJAJ Discover 125 ST</h3>
+                        <span class="marca-badge">BAJAJ</span>
+                        <p>Potencia y estilo en un solo lugar</p>
+                        <div class="precio">Desde S/ 5,999</div>
+                    </div>
+                </a>
+
+                <!-- Bajaj Boxer 150 -->
+                <a href="#modal-bajaj-boxer150" class="moto-card">
+                    <div class="moto-imagen">
+                        <img src="https://cdn.pixabay.com/photo/2017/07/03/20/17/motorcycle-2468757_640.jpg" alt="Bajaj Boxer 150">
+                    </div>
+                    <div class="moto-info">
+                        <h3>BAJAJ Boxer 150</h3>
+                        <span class="marca-badge">BAJAJ</span>
+                        <p>Ideal para trabajo y delivery</p>
+                        <div class="precio">Desde S/ 8,290</div>
+                    </div>
+                </a>
+
+                <!-- Bajaj Dominar 400 -->
+                <a href="#modal-bajaj-dominar400" class="moto-card">
+                    <div class="moto-imagen">
+                        <img src="https://cdn.pixabay.com/photo/2018/09/23/01/35/motorcycle-3697229_640.jpg" alt="Bajaj Dominar 400">
+                    </div>
+                    <div class="moto-info">
+                        <h3>BAJAJ Dominar 400</h3>
+                        <span class="marca-badge">BAJAJ</span>
+                        <p>Alta cilindrada para viajes y carretera</p>
+                        <div class="precio">Desde S/ 15,990</div>
+                    </div>
+                </a>
+
+                <!-- Suzuki GN 125 -->
+                <a href="#modal-suzuki-gn125" class="moto-card">
+                    <div class="moto-imagen">
+                        <img src="https://cdn.pixabay.com/photo/2022/05/01/17/02/motorcycle-7167574_640.jpg" alt="Suzuki GN 125">
+                    </div>
+                    <div class="moto-info">
+                        <h3>Suzuki GN 125</h3>
+                        <span class="marca-badge">SUZUKI</span>
+                        <p>Clásica, duradera y de bajo mantenimiento</p>
+                        <div class="precio">Desde S/ 8,590</div>
+                    </div>
+                </a>
+
+                <!-- Suzuki Gixxer 150 -->
+                <a href="#modal-suzuki-gixxer150" class="moto-card">
+                    <div class="moto-imagen">
+                        <img src="https://cdn.pixabay.com/photo/2021/11/10/05/04/motorcycle-6783429_640.jpg" alt="Suzuki Gixxer 150">
+                    </div>
+                    <div class="moto-info">
+                        <h3>Suzuki Gixxer 150</h3>
+                        <span class="marca-badge">SUZUKI</span>
+                        <p>Deportiva, ágil y con inyección electrónica</p>
+                        <div class="precio">Desde S/ 11,990</div>
+                    </div>
+                </a>
+
+                <!-- Suzuki Address 110 -->
+                <a href="#modal-suzuki-address110" class="moto-card">
+                    <div class="moto-imagen">
+                        <img src="https://cdn.pixabay.com/photo/2015/09/08/21/02/scooter-930727_640.jpg" alt="Suzuki Address 110">
+                    </div>
+                    <div class="moto-info">
+                        <h3>Suzuki Address 110</h3>
+                        <span class="marca-badge">SUZUKI</span>
+                        <p>Scooter automática, práctica y económica</p>
+                        <div class="precio">Desde S/ 7,490</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="servicios" class="container servicios-section">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <div class="servicio-icon">🏍️</div>
+                    <h3>Venta de Motos Nuevas</h3>
+                    <p>Modelos 2025 con garantía de 1 año</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">🔧</div>
+                    <h3>Mantenimiento</h3>
+                    <p>Preventivo y correctivo especializado</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">⚙️</div>
+                    <h3>Repuestos Originales</h3>
+                    <p>Todo lo que necesitas para tu moto</p>
+                </div>
+                <div class="servicio-card">
+                    <div class="servicio-icon">📋</div>
+                    <h3>Financiamiento</h3>
+                    <p>Cuotas desde S/ 250 mensuales</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="container">
+            <h2 class="section-title">Encuéntranos</h2>
+            <div class="contacto-grid">
+                <div class="contacto-card">
+                    <span class="icon">📞</span>
+                    <h3>Llámanos</h3>
+                    <p>Cotizaciones y reservas</p>
+                    <a href="tel:+51918329712" class="contacto-link">918 329 712</a>
+                </div>
+                <div class="contacto-card">
+                    <span class="icon">✉️</span>
+                    <h3>Escríbenos</h3>
+                    <p>Consultas y sugerencias</p>
+                    <a href="mailto:ventas@motoplanet.pe" class="contacto-link">ventas@motoplanet.pe</a>
+                </div>
+                <div class="contacto-card">
+                    <span class="icon">📍</span>
+                    <h3>Visítanos</h3>
+                    <p>Puerto Maldonado, Madre de Dios</p>
+                    <p>Av. Andrés Mallea</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 MotoPlanet S.A.C. | UNAMAD - Ingeniería de Sistemas</p>
+        <p>Yamaha · Bajaj · Suzuki | Financiamiento inmediato</p>
+    </footer>
+
+    <!-- ========== MODALES ========== -->
+    
+    <div id="modal-yamaha-ybr125" class="modal">
+        <div class="modal-content">
+            <a href="#" class="modal-close">&times;</a>
+            <div class="ficha-header">
+                <div class="ficha-imagen"><img src="data:image/jpeg;base64,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" alt="Yamaha YBR 125"></div>
+                <div class="ficha-titulo">
+                    <h2>Yamaha YBR 125</h2>
+                    <span class="ficha-marca">YAMAHA</span>
+                    <div class="ficha-precio">S/ 8,990</div>
+                    <p>La Yamaha YBR 125 es la moto ideal para la ciudad. Económica, confiable y de bajo mantenimiento.</p>
+                </div>
+            </div>
+            <div class="specs-modal">
+                <div class="spec-modal-item"><i class="fas fa-microchip"></i><div><strong>Cilindrada</strong><span>124 cc</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-horse-head"></i><div><strong>Potencia</strong><span>10.5 HP</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-oil-can"></i><div><strong>Motor</strong><span>4T SOHC</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-tachometer-alt"></i><div><strong>Consumo</strong><span>160 km/galón</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-cogs"></i><div><strong>Transmisión</strong><span>4 velocidades</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-weight-hanging"></i><div><strong>Peso</strong><span>121 kg</span></div></div>
+            </div>
+            <!-- esta parte es donde podemos poner el elace de wasap para cotizar -->
+            <a href="https://wa.me/51918329712?text=Hola%20MotoPlanet,%20deseo%20cotizar%20la%20Yamaha%20YBR%20125" target="_blank" class="btn-cotizar">
+                <i class="fab fa-whatsapp"></i> Cotizar ahora</a>
+            </div> 
+    </div>
+
+    <div id="modal-yamaha-fz150" class="modal">
+        <div class="modal-content">
+            <a href="#" class="modal-close">&times;</a>
+            <div class="ficha-header">
+                <div class="ficha-imagen"><img src="https://yamahayamamotos.com.co/wp-content/uploads/fz15v3_gris_2025-jpg.webp" alt="Yamaha FZ 150"></div>
+                <div class="ficha-titulo">
+                    <h2>Yamaha FZ 150</h2>
+                    <span class="ficha-marca">YAMAHA</span>
+                    <div class="ficha-precio">S/ 12,490</div>
+                    <p>Diseño agresivo y rendimiento deportivo. La FZ 150 ofrece una experiencia de manejo única.</p>
+                </div>
+            </div>
+            <div class="specs-modal">
+                <div class="spec-modal-item"><i class="fas fa-microchip"></i><div><strong>Cilindrada</strong><span>149 cc</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-horse-head"></i><div><strong>Potencia</strong><span>12.4 HP</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-oil-can"></i><div><strong>Motor</strong><span>4T SOHC</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-tachometer-alt"></i><div><strong>Consumo</strong><span>150 km/galón</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-cogs"></i><div><strong>Transmisión</strong><span>5 velocidades</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-weight-hanging"></i><div><strong>Peso</strong><span>128 kg</span></div></div>
+            </div>
+            <a href="https://wa.me/51918329712?text=Hola%20MotoPlanet,%20deseo%20cotizar%20la%20Yamaha%20YBR%20125" target="_blank" class="btn-cotizar">
+                <i class="fab fa-whatsapp"></i> Cotizar ahora</a>
+        </div>
+    </div>
+
+    <div id="modal-yamaha-crypton110" class="modal">
+        <div class="modal-content">
+            <a href="#" class="modal-close">&times;</a>
+            <div class="ficha-header">
+                <div class="ficha-imagen"><img src="https://cdn.pixabay.com/photo/2022/02/28/17/02/motorcycle-7038463_640.jpg" alt="Yamaha Crypton 110"></div>
+                <div class="ficha-titulo">
+                    <h2>Yamaha Crypton 110</h2>
+                    <span class="ficha-marca">YAMAHA</span>
+                    <div class="ficha-precio">S/ 6,990</div>
+                    <p>Económica, ágil y perfecta para la ciudad. Bajo consumo y facilidad de manejo.</p>
+                </div>
+            </div>
+            <div class="specs-modal">
+                <div class="spec-modal-item"><i class="fas fa-microchip"></i><div><strong>Cilindrada</strong><span>113 cc</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-horse-head"></i><div><strong>Potencia</strong><span>9.5 HP</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-oil-can"></i><div><strong>Motor</strong><span>4T SOHC</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-tachometer-alt"></i><div><strong>Consumo</strong><span>170 km/galón</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-cogs"></i><div><strong>Transmisión</strong><span>4 velocidades semi-auto</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-weight-hanging"></i><div><strong>Peso</strong><span>95 kg</span></div></div>
+            </div>
+            <a href="https://wa.me/51918329712?text=Hola%20MotoPlanet,%20deseo%20cotizar%20la%20Yamaha%20YBR%20125" target="_blank" class="btn-cotizar">
+                <i class="fab fa-whatsapp"></i> Cotizar ahora</a>
+   
+        </div>
+    </div>
+
+    <div id="modal-bajaj-discover125st" class="modal">
+        <div class="modal-content">
+            <a href="#" class="modal-close">&times;</a>
+            <div class="ficha-header">
+                <div class="ficha-imagen"><img src="https://somosmoto.pe/images/models/gallery/bajaj-discover-125st-2024-gallery-c9e2ae.jpg" alt="Bajaj Discover 125 ST"></div>
+                <div class="ficha-titulo">
+                    <h2>Bajaj Discover 125 ST</h2>
+                    <span class="ficha-marca">BAJAJ</span>
+                    <div class="ficha-precio">S/ 5,999</div>
+                    <p>Potencia y estilo en un solo lugar. Líder en su segmento con motor DTS-i.</p>
+                </div>
+            </div>
+            <div class="specs-modal">
+                <div class="spec-modal-item"><i class="fas fa-microchip"></i><div><strong>Cilindrada</strong><span>124.6 cc</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-horse-head"></i><div><strong>Potencia</strong><span>12.8 HP</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-oil-can"></i><div><strong>Motor</strong><span>4T DTS-i</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-tachometer-alt"></i><div><strong>Consumo</strong><span>250 km/galón</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-cogs"></i><div><strong>Transmisión</strong><span>5 velocidades</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-weight-hanging"></i><div><strong>Peso</strong><span>124 kg</span></div></div>
+            </div>
+            <a href="https://wa.me/51918329712?text=Hola%20MotoPlanet,%20deseo%20cotizar%20la%20Bajaj%20Discover%20125%20ST" target="_blank" class="btn-cotizar">
+                <i class="fab fa-whatsapp"></i> Cotizar ahora</a>
+        </div>
+    </div>
+
+    <div id="modal-bajaj-boxer150" class="modal">
+        <div class="modal-content">
+            <a href="#" class="modal-close">&times;</a>
+            <div class="ficha-header">
+                <div class="ficha-imagen"><img src="https://cdn.pixabay.com/photo/2017/07/03/20/17/motorcycle-2468757_640.jpg" alt="Bajaj Boxer 150"></div>
+                <div class="ficha-titulo">
+                    <h2>Bajaj Boxer 150</h2>
+                    <span class="ficha-marca">BAJAJ</span>
+                    <div class="ficha-precio">S/ 8,290</div>
+                    <p>Ideal para trabajo y delivery. Durabilidad y bajo costo de mantenimiento.</p>
+                </div>
+            </div>
+            <div class="specs-modal">
+                <div class="spec-modal-item"><i class="fas fa-microchip"></i><div><strong>Cilindrada</strong><span>149.5 cc</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-horse-head"></i><div><strong>Potencia</strong><span>12 HP</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-oil-can"></i><div><strong>Motor</strong><span>4T DTS-i</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-tachometer-alt"></i><div><strong>Consumo</strong><span>155 km/galón</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-cogs"></i><div><strong>Transmisión</strong><span>4 velocidades</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-weight-hanging"></i><div><strong>Peso</strong><span>130 kg</span></div></div>
+            </div>
+            <a href="https://wa.me/51918329712?text=Hola%20MotoPlanet,%20deseo%20cotizar%20la%20Bajaj%20Boxer%20150" target="_blank" class="btn-cotizar">
+                <i class="fab fa-whatsapp"></i> Cotizar ahora</a>
+        </div>
+    </div>
+
+    <div id="modal-bajaj-dominar400" class="modal">
+        <div class="modal-content">
+            <a href="#" class="modal-close">&times;</a>
+            <div class="ficha-header">
+                <div class="ficha-imagen"><img src="https://cdn.pixabay.com/photo/2018/09/23/01/35/motorcycle-3697229_640.jpg" alt="Bajaj Dominar 400"></div>
+                <div class="ficha-titulo">
+                    <h2>Bajaj Dominar 400</h2>
+                    <span class="ficha-marca">BAJAJ</span>
+                    <div class="ficha-precio">S/ 15,990</div>
+                    <p>Alta cilindrada para viajes y carretera. Potencia y confort para largas distancias.</p>
+                </div>
+            </div>
+            <div class="specs-modal">
+                <div class="spec-modal-item"><i class="fas fa-microchip"></i><div><strong>Cilindrada</strong><span>373 cc</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-horse-head"></i><div><strong>Potencia</strong><span>39.5 HP</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-oil-can"></i><div><strong>Motor</strong><span>4T líquido</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-tachometer-alt"></i><div><strong>Consumo</strong><span>130 km/galón</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-cogs"></i><div><strong>Transmisión</strong><span>6 velocidades</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-weight-hanging"></i><div><strong>Peso</strong><span>182 kg</span></div></div>
+            </div>
+            <a href="https://wa.me/51918329712?text=Hola%20MotoPlanet,%20deseo%20cotizar%20la%20Bajaj%20Dominar%20400" target="_blank" class="btn-cotizar">
+                <i class="fab fa-whatsapp"></i> Cotizar ahora</a>
+        </div>
+    </div>
+
+    <div id="modal-suzuki-gn125" class="modal">
+        <div class="modal-content">
+            <a href="#" class="modal-close">&times;</a>
+            <div class="ficha-header">
+                <div class="ficha-imagen"><img src="https://cdn.pixabay.com/photo/2022/05/01/17/02/motorcycle-7167574_640.jpg" alt="Suzuki GN 125"></div>
+                <div class="ficha-titulo">
+                    <h2>Suzuki GN 125</h2>
+                    <span class="ficha-marca">SUZUKI</span>
+                    <div class="ficha-precio">S/ 8,590</div>
+                    <p>Clásica, duradera y de bajo mantenimiento. Favorita para trabajo y transporte diario.</p>
+                </div>
+            </div>
+            <div class="specs-modal">
+                <div class="spec-modal-item"><i class="fas fa-microchip"></i><div><strong>Cilindrada</strong><span>124 cc</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-horse-head"></i><div><strong>Potencia</strong><span>11 HP</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-oil-can"></i><div><strong>Motor</strong><span>4T OHC</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-tachometer-alt"></i><div><strong>Consumo</strong><span>150 km/galón</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-cogs"></i><div><strong>Transmisión</strong><span>5 velocidades</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-weight-hanging"></i><div><strong>Peso</strong><span>112 kg</span></div></div>
+            </div>
+            <a href="https://wa.me/51918329712?text=Hola%20MotoPlanet,%20deseo%20cotizar%20la%20Suzuki%20GN%20125" target="_blank" class="btn-cotizar">
+                <i class="fab fa-whatsapp"></i> Cotizar ahora</a>
+        </div>
+    </div>
+
+    <div id="modal-suzuki-gixxer150" class="modal">
+        <div class="modal-content">
+            <a href="#" class="modal-close">&times;</a>
+            <div class="ficha-header">
+                <div class="ficha-imagen"><img src="https://cdn.pixabay.com/photo/2021/11/10/05/04/motorcycle-6783429_640.jpg" alt="Suzuki Gixxer 150"></div>
+                <div class="ficha-titulo">
+                    <h2>Suzuki Gixxer 150</h2>
+                    <span class="ficha-marca">SUZUKI</span>
+                    <div class="ficha-precio">S/ 11,990</div>
+                    <p>Deportiva, ágil y con inyección electrónica. Lo mejor de la tecnología Suzuki.</p>
+                </div>
+            </div>
+            <div class="specs-modal">
+                <div class="spec-modal-item"><i class="fas fa-microchip"></i><div><strong>Cilindrada</strong><span>155 cc</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-horse-head"></i><div><strong>Potencia</strong><span>13.6 HP</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-oil-can"></i><div><strong>Motor</strong><span>4T inyección</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-tachometer-alt"></i><div><strong>Consumo</strong><span>155 km/galón</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-cogs"></i><div><strong>Transmisión</strong><span>5 velocidades</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-weight-hanging"></i><div><strong>Peso</strong><span>136 kg</span></div></div>
+            </div>
+            <a href="https://wa.me/51918329712?text=Hola%20MotoPlanet,%20deseo%20cotizar%20la%20Suzuki%20Gixxer%20150" target="_blank" class="btn-cotizar">
+                <i class="fab fa-whatsapp"></i> Cotizar ahora</a>
+        </div>
+    </div>
+
+    <div id="modal-suzuki-address110" class="modal">
+        <div class="modal-content">
+            <a href="#" class="modal-close">&times;</a>
+            <div class="ficha-header">
+                <div class="ficha-imagen"><img src="https://cdn.pixabay.com/photo/2015/09/08/21/02/scooter-930727_640.jpg" alt="Suzuki Address 110"></div>
+                <div class="ficha-titulo">
+                    <h2>Suzuki Address 110</h2>
+                    <span class="ficha-marca">SUZUKI</span>
+                    <div class="ficha-precio">S/ 7,490</div>
+                    <p>Scooter automática, práctica y económica. Perfecta para moverse en la ciudad.</p>
+                </div>
+            </div>
+            <div class="specs-modal">
+                <div class="spec-modal-item"><i class="fas fa-microchip"></i><div><strong>Cilindrada</strong><span>112 cc</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-horse-head"></i><div><strong>Potencia</strong><span>8.5 HP</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-oil-can"></i><div><strong>Motor</strong><span>4T OHC</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-tachometer-alt"></i><div><strong>Consumo</strong><span>165 km/galón</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-cogs"></i><div><strong>Transmisión</strong><span>Automática CVT</span></div></div>
+                <div class="spec-modal-item"><i class="fas fa-weight-hanging"></i><div><strong>Peso</strong><span>98 kg</span></div></div>
+            </div>
+            <a href="https://wa.me/51918329712?text=Hola%20MotoPlanet,%20deseo%20cotizar%20la%20Suzuki%20Address%20110" target="_blank" class="btn-cotizar">
+                <i class="fab fa-whatsapp"></i> Cotizar ahora</a>
+        </div>
+    </div>
+    
+
+</body>
+
+</html>

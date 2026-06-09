@@ -1,0 +1,560 @@
+/* ========== RESETEO PROFESIONAL ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #fcfcfc;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* ========== NAVEGACIÓN ========== */
+.main-header {
+    background-color: #022b3a;
+    color: white;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #f4a261;
+}
+
+.logo i {
+    margin-right: 8px;
+}
+
+.main-header ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.main-header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.main-header a:hover {
+    color: #f4a261;
+}
+.hero {
+    /* 1. Añadimos un fondo negro (#000) para rellenar los costados */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                #000000 url('logo/WhatsApp\ Image\ 2026-05-19\ at\ 8.20.12\ AM.jpeg') no-repeat;
+    
+    /* 2. Mantenemos el logo completo verticalmente */
+    background-size: contain; 
+    background-position: center;
+    
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.btn-cta {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #e76f51;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-cta:hover {
+    background-color: #bc5a40;
+    transform: scale(1.05);
+}
+
+/* ========== LAYOUT Y GRIDS (BOX MODEL) ========== */
+.container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #022b3a;
+    font-size: 2.2rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #e76f51;
+}
+
+.catalogo-descripcion {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* Grid de Catálogo */
+.catalogo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* ========== TARJETAS (CARD DESIGN) PARA MOTOS ========== */
+.moto-card {
+   
+    background: white;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #eee;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.moto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.moto-imagen {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.moto-imagen img {
+    width: 100%;
+    height: 100%;
+    /* 1. Cambia 'cover' por 'contain' si no quieres que se corte ninguna parte de la moto */
+    object-fit: contain; 
+    
+    /* 2. Añade un pequeño espacio interno para que la moto no choque con los bordes de la tarjeta */
+    padding: 5px; 
+
+    transition: transform 0.3s;
+    
+    
+}
+
+.moto-card:hover .moto-imagen img {
+    transform: scale(1.05);
+}
+
+.moto-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.moto-info h3 {
+    color: #022b3a;
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+.marca-badge {
+    display: inline-block;
+    background: #fef3e8;
+    color: #e76f51;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.moto-info p {
+    color: #666;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.precio {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #e76f51;
+    font-size: 1.2rem;
+}
+
+/* ========== MODAL (SIN JS, CON :TARGET) ========== */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal:target {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 800px;
+    max-height: 85vh;
+    overflow-y: auto;
+    border-radius: 15px;
+    padding: 30px;
+    position: relative;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #aaa;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #e76f51;
+}
+
+/* Ficha técnica dentro del modal */
+.ficha-header {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.ficha-imagen {
+    flex: 1;
+    min-width: 180px;
+    background: #f5f5f5;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.ficha-imagen img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.ficha-titulo {
+    flex: 2;
+}
+
+.ficha-titulo h2 {
+    color: #022b3a;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.ficha-marca {
+    display: inline-block;
+    background: #e76f51;
+    color: white;
+    padding: 4px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.ficha-precio {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e76f51;
+    margin-bottom: 10px;
+}
+
+.ficha-titulo p {
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Especificaciones en grid */
+.specs-modal {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.spec-modal-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f8fafd;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.spec-modal-item i {
+    font-size: 1.3rem;
+    color: #e76f51;
+    width: 30px;
+}
+
+.spec-modal-item strong {
+    display: block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: #6b8cae;
+}
+
+.spec-modal-item span {
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.btn-cotizar {
+    display: block;
+    width: 100%;
+    background: #e76f51;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn-cotizar:hover {
+    background: #bc5a40;
+}
+
+/* ========== SERVICIOS ========== */
+.servicios-section {
+    background-color: #f8fafd;
+    border-radius: 20px;
+    padding: 20px 0;
+}
+
+.servicios-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.servicio-card {
+    background: white;
+    width: 250px;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+    border: 1px solid #eee;
+}
+
+.servicio-card:hover {
+    transform: translateY(-5px);
+}
+
+.servicio-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.servicio-card h3 {
+    color: #e76f51;
+    margin-bottom: 10px;
+}
+
+.servicio-card p {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+/* ========== CONTACTO (GRID Y TARJETAS) ========== */
+.contacto-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.contacto-card {
+    background: white;
+    width: 280px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    border: 1px solid #eee;
+    text-align: center;
+    padding: 25px;
+}
+
+.contacto-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.contacto-card h3 {
+    color: #022b3a;
+    margin-bottom: 10px;
+}
+
+.contacto-card p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.contacto-link {
+    display: inline-block;
+    margin-top: 5px;
+    font-weight: bold;
+    color: #e76f51;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+.contacto-link:hover {
+    text-decoration: underline;
+}
+
+/* ========== FOOTER ========== */
+.main-footer {
+    background: #111;
+    color: #888;
+    text-align: center;
+    padding: 40px;
+    margin-top: 60px;
+}
+
+.main-footer p {
+    margin: 5px 0;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .main-header nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .main-header ul {
+        gap: 15px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .ficha-header {
+        flex-direction: column;
+    }
+    
+    .modal-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .container {
+        margin: 40px auto;
+        padding: 0 15px;
+    }
+    
+    .hero {
+        height: 60vh;
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+}
