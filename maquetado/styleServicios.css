@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-header {
+    background-color: #022b3a;
+    color: white;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.main-header ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.main-header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.main-header a:hover {
+    color: #f4a261;
+}
+:root {
+    --primary-color: #ff5722;     /* Color de énfasis (Naranja Motero) */
+    --primary-hover: #e04e1d;     /* Color de énfasis al pasar el mouse */
+    --bg-cards: #ffffff;          /* Fondo de las tarjetas */
+    --text-main: #2c3e50;         /* Color de los títulos */
+    --text-muted: #7f8c8d;        /* Color de los textos secundarios */
+    --transition-speed: 0.4s;     /* Velocidad de la animación de las tarjetas */
+}
+
+/* Contenedor Principal de la Sección */
+.servicios-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Título de la Sección ("Nuestros Servicios") */
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--text-main);
+    margin-bottom: 40px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Línea decorativa debajo del título principal */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Rejilla de Servicios (Grid Adaptativo) 
+   Se ajusta automáticamente: 1 columna en celular, 3 en pantallas grandes */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 10px;
+}
+
+/* ==========================================================================
+   ESTRUCTURA DE LAS TARJETAS (CARD)
+   ========================================================================== */
+
+.servicio-card {
+    background-color: var(--bg-cards);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    min-height: 280px; /* Altura fija para evitar saltos en el diseño */
+    position: relative;
+    overflow: hidden;   /* Esconde el submenú cuando está a la derecha */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de flotación al pasar el mouse sobre la tarjeta */
+.servicio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Ocultar el Checkbox del truco interactivo */
+.card-toggle {
+    display: none;
+}
+
+/* ==========================================================================
+   VISTAS INTERNAS (FRENTE Y SUBMENÚ)
+   ========================================================================== */
+
+/* Contenedores base de ambas vistas */
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    padding: 30px 25px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* Animación fluida de deslizamiento y desvanecimiento */
+    transition: transform var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity var(--transition-speed) ease;
+}
+
+/* Configuración específica del Submenú (Vista de atrás) */
+.card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fafafa; /* Fondo ligeramente diferente para el submenú */
+    opacity: 0;
+    transform: translateX(100%); /* Oculto completamente a la derecha */
+    pointer-events: none;        /* Desactivado mientras no se vea */
+}
+
+/* ==========================================================================
+   ELEMENTOS DE DETALLE DENTRO DE LA TARJETA
+   ========================================================================== */
+
+/* El icono circular (Emoji) */
+.servicio-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    background-color: rgba(255, 87, 34, 0.1); /* Círculo suave de fondo */
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+/* Títulos de las tarjetas H3 */
+.servicio-card h3 {
+    font-size: 1.35rem;
+    color: var(--text-main);
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+/* Descripciones de las tarjetas P */
+.servicio-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   LOGICA DEL CLICK (EFECTO CAMBIO DE PANTALLA)
+   ========================================================================== */
+
+/* Cuando el checkbox se activa: El frente se va a la izquierda y se desvanece */
+.card-toggle:checked ~ .card-front {
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Cuando el checkbox se activa: El submenú entra al centro y se muestra */
+.card-toggle:checked ~ .card-back {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ==========================================================================
+   BOTONES Y ENLACES DEL SUBMENÚ
+   ========================================================================== */
+
+/* Botón "Ver más / Ver Categorías" */
+.btn-detalles {
+    margin-top: auto; /* Lo empuja siempre al fondo de la tarjeta */
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+    padding: 5px 10px;
+}
+
+.btn-detalles:hover {
+    color: var(--primary-hover);
+    transform: translateX(3px); /* Se mueve sutilmente a la derecha */
+}
+
+/* Botón "Volver" dentro del submenú */
+.btn-regresar {
+    margin-top: 15px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+}
+
+.btn-regresar:hover {
+    color: var(--text-main);
+}
+
+/* Lista de enlaces del submenú */
+.submenu-lista {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    width: 100%;
+}
+
+.submenu-lista li {
+    margin-bottom: 8px;
+}
+
+.submenu-lista a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    display: block;
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    transition: background var(--transition-speed) ease, 
+                color var(--transition-speed) ease, 
+                transform var(--transition-speed) ease;
+}
+
+/* Efecto al pasar el mouse por las opciones del submenú */
+.submenu-lista a:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    transform: scale(1.02); /* Se agranda un poquito */
+}
